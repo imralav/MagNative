@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context="pl.com.imralav.magisternative.DataAccessCheckActivity">
+
+    <RelativeLayout
+        android:id="@+id/navigationPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/goToStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/data_check" />
+
+        <ImageView
+            android:id="@+id/goToCameraCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@android:drawable/ic_menu_camera"
+            android:onClick="goToCameraCheck"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/navigationPanel">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TableRow
+                android:id="@+id/checkPhotosRow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/checkPhotosButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkPhotos"
+                    android:text="@string/check_photos"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/checkPhotosStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:drawableStart="@android:drawable/ic_menu_help"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/checkContactsRow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/checkContactsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_contacts"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/checkContactsStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:drawableStart="@android:drawable/ic_menu_help"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/checkCalendarRow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/checkCalendarButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkCalendar"
+                    android:text="@string/check_calendar"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/checkCalendarStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:drawableStart="@android:drawable/ic_menu_help"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/checkMsgRow"
+                android:layout_width="0dp"
+                android:layout_height="0dp">
+
+                <Button
+                    android:id="@+id/checkMsgButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_msg"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/checkMsgStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:drawableStart="@android:drawable/ic_menu_help"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

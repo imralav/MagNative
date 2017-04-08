@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MagisterNative</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="check_photos">Check photos</string>
+    <string name="check_contacts">Check contacts</string>
+    <string name="check_calendar">Check calendar</string>
+    <string name="check_msg">Check messages</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="sent">Sent</string>
+    <string name="data_check">Data</string>
+    <string name="camera_check">Camera</string>
 </resources>

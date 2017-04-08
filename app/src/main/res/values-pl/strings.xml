@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="check_photos">Sprawdź zdjęcia</string>
+    <string name="check_calendar">Sprawdź kalendarz</string>
+    <string name="check_contacts">Sprawdź kontakty</string>
+    <string name="check_msg">Sprawdź sms</string>
+    <string name="unavailable">Niedostępne</string>
+    <string name="sent">Wysłane</string>
+    <string name="button_send">Wyślij</string>
+    <string name="edit_message">Wprowadź wiadomość</string>
+    <string name="app_name">MagisterNative</string>
+    <string name="data_check">Dane</string>
+    <string name="camera_check">Kamera</string>
+</resources>
