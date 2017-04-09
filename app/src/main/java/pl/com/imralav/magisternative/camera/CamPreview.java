@@ -8,7 +8,6 @@ import android.view.SurfaceView;
 import android.widget.Toast;
 
 public class CamPreview {
-    private SurfaceView preview = null;
     private SurfaceHolder previewHolder = null;
     private Camera camera = null;
     private boolean inPreview = false;
@@ -33,8 +32,7 @@ public class CamPreview {
 
     private CamPreview(SurfaceView view, int cameraId) {
         this.cameraId = cameraId;
-        this.preview = view;
-        previewHolder = preview.getHolder();
+        previewHolder = view.getHolder();
         previewHolder.addCallback(surfaceCallback);
         previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
