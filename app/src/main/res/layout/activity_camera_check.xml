@@ -59,6 +59,15 @@
             android:layout_weight="1"
             android:layout_gravity="center"/>
 
+        <ImageButton
+            android:id="@+id/swapCamerasButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_popup_sync"
+            android:layout_gravity="center"
+            android:onClick="swapCameras"/>
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"

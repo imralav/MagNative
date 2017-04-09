@@ -44,7 +44,7 @@ public class CamPreview {
     }
 
     public void stop() {
-        if(inPreview) {
+        if (inPreview) {
             camera.stopPreview();
         }
         camera.release();
@@ -53,22 +53,29 @@ public class CamPreview {
     }
 
     public void start() {
-        if(cameraConfigured && camera != null) {
-            camera.startPreview();
-            inPreview = true;
+        if (camera == null) {
+            return;
+        }
+        if (!cameraConfigured) {
+            setProvider();
+        }
+        camera.startPreview();
+        inPreview = true;
+    }
+
+    private void setProvider() {
+        try {
+            camera.setPreviewDisplay(previewHolder);
+        } catch (Throwable t) {
+            Toast
+                    .makeText(context, t.getMessage(), Toast.LENGTH_LONG)
+                    .show();
         }
     }
 
     private void initPreview(int width, int height) {
         if (camera != null && previewHolder.getSurface() != null) {
-            try {
-                camera.setPreviewDisplay(previewHolder);
-            } catch (Throwable t) {
-                Toast
-                        .makeText(context, t.getMessage(), Toast.LENGTH_LONG)
-                        .show();
-            }
-
+            setProvider();
             if (!cameraConfigured) {
                 Camera.Parameters parameters = camera.getParameters();
                 Camera.Size size = getBestPreviewSize(width, height,

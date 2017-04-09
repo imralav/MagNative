@@ -11,6 +11,7 @@ import pl.com.imralav.magisternative.camera.CamPreview;
 public class CameraCheckActivity extends AppCompatActivity {
     private CamPreview frontCamPreview;
     private CamPreview backCamPreview;
+    private CamPreview currentCamPreview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,21 @@ public class CameraCheckActivity extends AppCompatActivity {
         backCamPreview = CamPreview
                 .backCamPreviewOn(backPreview)
                 .withContext(this);
+        currentCamPreview = frontCamPreview;
+    }
+
+    public void swapCameras(View view) {
+        stopPreview();
+        swapCameras();
+        startPreview();
+    }
+
+    private void swapCameras() {
+        if(currentCamPreview == frontCamPreview) {
+            currentCamPreview = backCamPreview;
+        } else {
+            currentCamPreview = frontCamPreview;
+        }
     }
 
     public void goToDataCheck(View view) {
@@ -38,20 +54,21 @@ public class CameraCheckActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        frontCamPreview.open();
-        backCamPreview.open();
         startPreview();
     }
 
     @Override
     public void onPause() {
-        frontCamPreview.stop();
-        backCamPreview.stop();
+        stopPreview();
         super.onPause();
     }
 
+    private void stopPreview() {
+        currentCamPreview.stop();
+    }
+
     private void startPreview() {
-        frontCamPreview.start();
-        backCamPreview.start();
+        currentCamPreview.open();
+        currentCamPreview.start();
     }
 }
