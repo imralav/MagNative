@@ -11,4 +11,6 @@
     <string name="app_name">MagisterNative</string>
     <string name="data_check">Dane</string>
     <string name="camera_check">Kamera</string>
+    <string name="front_camera">Przednia</string>
+    <string name="back_camera">Tylna</string>
 </resources>
