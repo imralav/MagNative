@@ -84,7 +84,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/check_contacts"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:onClick="checkContacts"/>
 
                 <TextView
                     android:id="@+id/checkContactsStatusText"
