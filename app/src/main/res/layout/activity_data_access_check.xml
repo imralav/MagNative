@@ -98,30 +98,6 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/checkCalendarRow"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="16dp">
-
-                <Button
-                    android:id="@+id/checkCalendarButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="checkCalendar"
-                    android:text="@string/check_calendar"
-                    android:textAllCaps="false" />
-
-                <TextView
-                    android:id="@+id/checkCalendarStatusText"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
-                    android:drawableStart="@android:drawable/ic_menu_help"
-                    android:drawablePadding="5dp"
-                    android:gravity="center_vertical" />
-            </TableRow>
-
-            <TableRow
                 android:id="@+id/checkMsgRow"
                 android:layout_width="0dp"
                 android:layout_height="0dp">
@@ -131,7 +107,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/check_msg"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:onClick="checkMessages"/>
 
                 <TextView
                     android:id="@+id/checkMsgStatusText"

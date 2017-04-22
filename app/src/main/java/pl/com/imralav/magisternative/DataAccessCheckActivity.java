@@ -42,11 +42,23 @@ public class DataAccessCheckActivity extends AppCompatActivity {
         startActivityForResult(intent, CONTACTS_REQUEST_CODE);
     }
 
-    public void checkCalendar(View view) {
-        TextView statusText = (TextView) findViewById(R.id.checkCalendarStatusText);
-        statusText.setText(R.string.sent);
-        int iconId = DrawablesHelper.getDataAccessibleIconId(getResources(), getPackageName());
-        statusText.setCompoundDrawablesRelativeWithIntrinsicBounds(iconId, 0, 0, 0);
+    public void checkMessages(View view) {
+        Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"), null, null, null, null);
+        StringBuilder message = new StringBuilder();
+        if (cursor != null && cursor.moveToFirst()) { // must check the result to prevent exception
+            do {
+                int column = cursor.getColumnIndex("address");
+                message.append(cursor.getString(column)).append(":");
+                column = cursor.getColumnIndex("body");
+                message.append(cursor.getString(column).substring(0, 15)).append("...");
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+        setCheckMsgStatusToAccessible(message.toString());
+    }
+
+    private void setCheckMsgStatusToAccessible(String text) {
+        setAccessibleStatusOnResource(R.id.checkMsgStatusText, text);
     }
 
     @Override
