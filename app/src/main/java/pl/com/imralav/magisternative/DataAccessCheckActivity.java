@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ import pl.com.imralav.magisternative.utils.DrawablesHelper;
 public class DataAccessCheckActivity extends AppCompatActivity {
 
     private static final int PHOTO_GALLERY_REQUEST_CODE = 0;
+    private static final String TAG = DataAccessCheckActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,11 @@ public class DataAccessCheckActivity extends AppCompatActivity {
                 setPhotosStatusToInaccessible();
             } else {
                 setPhotosStatusToAccessible();
-                Toast.makeText(this, "Photo URI: " + data.getData().toString(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, PhotoPreviewActivity.class);
+                String photoUri = data.getData().toString();
+                intent.putExtra(MagNativeConstants.PHOTO_URI_KEY, photoUri);
+                Log.i(TAG, "Starting photo preview activity for URI " + photoUri);
+                startActivity(intent);
             }
         }
     }
